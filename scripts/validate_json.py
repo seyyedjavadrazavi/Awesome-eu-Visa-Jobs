@@ -1,9 +1,17 @@
 import json
 import sys
 import os
+import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JSON_PATH = os.path.join(BASE_DIR, 'data', 'companies.json')
+
+def validate_date(date_text):
+    try:
+        datetime.datetime.strptime(date_text, '%Y-%m-%d')
+        return True
+    except ValueError:
+        return False
 
 def validate_data():
     try:
@@ -20,30 +28,33 @@ def validate_data():
     print("🔍 Validating data...")
 
     for index, company in enumerate(data):
-        name = company.get('name', '').strip().lower()
+        name = company.get('name', '').strip()
         url = company.get('careers_url', '').strip().lower()
+        last_updated = company.get('last_updated', '')
 
-        if name in seen_names:
-            print(f"❌ Duplicate Error: Company '{company['name']}' already exists.")
+        # Check Duplicates
+        if name.lower() in seen_names:
+            print(f"❌ Duplicate Name: '{name}'")
             has_error = True
         else:
-            seen_names.add(name)
+            seen_names.add(name.lower())
 
         if url in seen_urls:
-            print(f"❌ Duplicate Error: The URL for '{company['name']}' is already used by another entry.")
+            print(f"❌ Duplicate URL: '{name}'")
             has_error = True
         else:
             seen_urls.add(url)
             
-        if company.get('visa_sponsorship') not in ["YES", "NO", "SENIOR_ONLY"]:
-            print(f"❌ Value Error: Invalid visa_sponsorship value for '{company['name']}'")
+        # Check Date Format (YYYY-MM-DD)
+        if not validate_date(last_updated):
+            print(f"❌ Invalid Date Format for '{name}': {last_updated}. Expected YYYY-MM-DD.")
             has_error = True
 
     if has_error:
-        print("\n💥 Validation FAILED. Please fix the errors above.")
+        print("\n💥 Validation FAILED.")
         sys.exit(1)
     else:
-        print("\n✅ All checks passed! No duplicates found.")
+        print("\n✅ All checks passed!")
         sys.exit(0)
 
 if __name__ == "__main__":

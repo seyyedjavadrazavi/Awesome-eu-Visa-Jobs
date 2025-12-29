@@ -12,13 +12,13 @@ You don't need to be a developer to contribute. Just follow these steps:
 4.  Use the **template** below to ensure the format is correct.
 5.  **Commit** your changes and submit a **Pull Request**.
 
-> ⚠️ **IMPORTANT:** Do NOT edit `README.md` or `index.html` manually. The system updates them automatically when you change the JSON file.
+> ⚠️ **IMPORTANT:** Do NOT edit `README.md` manually. The system updates it automatically.
 
 ---
 
 ## 📋 JSON Data Template
 
-Please copy this object and fill in the details. **Remove the comments** (lines starting with `//`) before saving, as standard JSON does not support them.
+Please copy this object and fill in the details. **Remove the comments** before saving.
 
 ```json
 {
@@ -29,23 +29,35 @@ Please copy this object and fill in the details. **Remove the comments** (lines 
       "country": "Germany",
       "city": "Berlin",
       "is_hq": true
-    },
-    {
-      "country": "Netherlands",
-      "city": "Amsterdam",
-      "is_hq": false
     }
   ],
   "visa_sponsorship": "YES",
   "remote_policy": "HYBRID",
   "tech_stack": [
     "TypeScript",
-    "React",
-    "Go"
+    "React"
   ],
   "hiring_status": "ACTIVE",
+  "last_updated": "2025-01-01", 
   "meta_data": {
     "relocation_package": true,
     "language": "English"
   }
 }
+```
+
+## 📝 Field Guidelines
+
+| Field | Type | Accepted Values / Notes |
+| :--- | :--- | :--- |
+| `name` | String | The official name of the company. |
+| `careers_url` | String | Direct link to the jobs/careers page. |
+| `locations` | Array | List of office locations. Set `"is_hq": true` for the headquarters. |
+| `visa_sponsorship` | String | `YES`, `NO`, `SENIOR_ONLY` |
+| `remote_policy` | String | `GLOBAL`, `EU_ONLY`, `HYBRID`, `ON_SITE` |
+| `tech_stack` | Array | Main technologies used. |
+| `last_updated` | String | Format: `YYYY-MM-DD` (Example: "2025-12-29") |
+| `hiring_status` | String | `ACTIVE`, `FREEZE` |
+| `meta_data` | Object | `relocation_package`: true/false <br> `language`: Main working language. |
+
+Thank you for helping job seekers! 🇪🇺💙
