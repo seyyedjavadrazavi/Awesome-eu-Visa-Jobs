@@ -63,40 +63,5 @@
       "relocation_package": true,
       "language": "English"
     }
-  },
-  {
-    "name": "Spotify1",
-    "careers_url": "https://www.lifeatspotify.com/job",
-    "locations": [
-      {
-        "country": "Sweden",
-        "city": "Stockholm",
-        "is_hq": true
-      },
-      {
-        "country": "Germany",
-        "city": "Berlin",
-        "is_hq": false
-      },
-      {
-        "country": "UK",
-        "city": "London",
-        "is_hq": false
-      }
-    ],
-    "visa_sponsorship": "YES",
-    "remote_policy": "HYBRID",
-    "tech_stack": [
-      "Java",
-      "Python",
-      "React",
-      "GCP"
-    ],
-    "hiring_status": "ACTIVE",
-    "last_updated": "2025-12-29",
-    "meta_data": {
-      "relocation_package": true,
-      "language": "English"
-    }
   }
 ]
