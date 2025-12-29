@@ -1,0 +1,35 @@
+name: Check Dead Links
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Run Link Checker
+        run: python scripts/check_links.py
+
+      - name: Create Issue if Links are Broken
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: "⚠️ Broken Links Report (Weekly Check)"
+          content-filepath: ./broken_links_report.md
+          labels: maintenance, automated
+          assignees: ${{ github.actor }}
