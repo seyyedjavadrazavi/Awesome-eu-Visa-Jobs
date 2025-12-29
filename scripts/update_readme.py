@@ -14,7 +14,7 @@ def generate_markdown(companies):
 
 A curated list of European tech companies offering **Visa Sponsorship** and **Remote Work**.
 
-**[🌐 Visit the Website (Search & Filter)](https://alihajqani.github.io/awesome-eu-visa-jobs)**
+**[🌐 Visit the Website (Search & Filter)](https://alihajqani.github.io/Awesome-eu-Visa-Jobs/)**
 
 ## 🚀 Company List
 | Company | Locations | Visa Sponsorship | Remote Policy | Tech Stack | Last Check |
