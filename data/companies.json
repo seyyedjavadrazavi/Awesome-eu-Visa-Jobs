@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Spotify",
+    "careers_url": "https://www.lifeatspotify.com/jobs",
+    "locations": [
+      {
+        "country": "Sweden",
+        "city": "Stockholm",
+        "is_hq": true
+      },
+      {
+        "country": "Germany",
+        "city": "Berlin",
+        "is_hq": false
+      },
+      {
+        "country": "UK",
+        "city": "London",
+        "is_hq": false
+      }
+    ],
+    "visa_sponsorship": "YES",
+    "remote_policy": "HYBRID",
+    "tech_stack": [
+      "Java",
+      "Python",
+      "React",
+      "GCP"
+    ],
+    "hiring_status": "ACTIVE",
+    "meta_data": {
+      "relocation_package": true,
+      "language": "English"
+    }
+  },
+  {
+    "name": "Zalando",
+    "careers_url": "https://jobs.zalando.com/en/",
+    "locations": [
+      {
+        "country": "Germany",
+        "city": "Berlin",
+        "is_hq": true
+      },
+      {
+        "country": "Ireland",
+        "city": "Dublin",
+        "is_hq": false
+      }
+    ],
+    "visa_sponsorship": "YES",
+    "remote_policy": "EU_ONLY",
+    "tech_stack": [
+      "Scala",
+      "Kotlin",
+      "AWS",
+      "Kubernetes"
+    ],
+    "hiring_status": "ACTIVE",
+    "meta_data": {
+      "relocation_package": true,
+      "language": "English"
+    }
+  }
+]
